@@ -1,43 +1,52 @@
 * {
     margin: 0;
-    padding: 0;
     color: #222;
+    padding: 0;
 
 }
 
-.resume {
-    display: flex;
+
+
+html {
     border: 2rem solid rgb(208, 220, 219);
     padding: 2rem;
+
 }
+
 
 .profile-info {
 
     float: left;
-    width: 50%;
-    box-sizing: border-box;
-    padding: 1.5rem;
-    margin: 2rem;
-
-}
-
-.education-info {
-    display: block;
-    float: left;
-    width: 50%;
+    width: 45%;
     box-sizing: border-box;
     padding: 1.5rem;
     margin: 2rem;
     
 
+}
+
+.education-info {
+
+    float: left;
+    width: 45%;
+    box-sizing: border-box;
+    padding: 1.5rem;
+    margin: 2rem;
+
+
 
 }
 
-section + section {
+
+
+
+
+section+section {
     margin-top: 2rem;
 }
+
 .intro {
-    margin: 2rem;    
+    margin: 2rem;
 }
 
 ul {
@@ -118,26 +127,39 @@ a {
 }
 
 .container {
-    width: 100%; /* Full width */
-    background-color: #ddd; /* Grey background */
-  }
-  
-  .professional-skills p{
-      margin-top: 1rem;
-  }
+    width: 100%;
+    /* Full width */
+    background-color: #ddd;
+    /* Grey background */
+}
 
-  .skills {
+.professional-skills p {
+    margin-top: 1rem;
+}
+
+.skills {
     text-align: center;
-    padding-top: 0.15rem;  
-    padding-bottom: 0.15rem; 
+    padding-top: 0.15rem;
+    padding-bottom: 0.15rem;
     color: rgb(219, 213, 213);
-    
-  }
-  
-  .html, .css {width: 90%; background-color: #04AA6D;}
-  .js, .bootstrap {width: 80%; background-color: #2196F3;}
-  .react, .git {width: 65%; background-color: #f44336;} 
-  
+
+}
+
+.html, .css {
+    width: 90%;
+    background-color: #04AA6D;
+}
+
+.js, .bootstrap {
+    width: 80%;
+    background-color: #2196F3;
+}
+
+.react, .git {
+    width: 65%;
+    background-color: #f44336;
+}
+
 
 .location {
     font-style: italic;

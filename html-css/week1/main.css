@@ -9,7 +9,9 @@
 
 html {
     border: 2rem solid rgb(208, 220, 219);
-    padding: 2rem;
+    background-color: #F3E9DD;
+   
+    
 
 }
 
@@ -17,21 +19,25 @@ html {
 .profile-info {
 
     float: left;
-    width: 45%;
+    width: 48%;
     box-sizing: border-box;
-    padding: 1.5rem;
-    margin: 2rem;
+    padding-left: .25rem;
+    margin: 10px;
+    
+    
     
 
 }
 
 .education-info {
 
+   
     float: left;
-    width: 45%;
+    width: 48%;
     box-sizing: border-box;
-    padding: 1.5rem;
-    margin: 2rem;
+    padding: .25rem;
+    margin: 10px;
+    
 
 
 

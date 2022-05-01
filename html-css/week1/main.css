@@ -10,8 +10,8 @@
 html {
     border: 2rem solid rgb(208, 220, 219);
     background-color: #F3E9DD;
-   
-    
+
+
 
 }
 
@@ -19,25 +19,25 @@ html {
 .profile-info {
 
     float: left;
-    width: 48%;
+    width: 45%;
     box-sizing: border-box;
     padding-left: .25rem;
     margin: 10px;
-    
-    
-    
+
+
+
 
 }
 
 .education-info {
 
-   
+
     float: left;
-    width: 48%;
+    width: 45%;
     box-sizing: border-box;
     padding: .25rem;
     margin: 10px;
-    
+
 
 
 

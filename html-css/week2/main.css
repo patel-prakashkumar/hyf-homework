@@ -141,10 +141,6 @@ footer li {
 @media only screen and (max-width: 768px) {
 
 
-
-
-
-
     h1 {
         font-size: 1.2rem;
         text-align: center;
@@ -152,6 +148,7 @@ footer li {
 
     p {
         text-align: justify;
+        padding: 20px;
     }
 
     nav>ul {
@@ -164,18 +161,47 @@ footer li {
 
 
 
-    .header-info, .info, .gallery, .aside-article-info, .galllery-info, .footer-info {
+    .header-info, .info, .gallery, .footer-info {
         display: flex;
         flex-direction: column;
-        flex-wrap: nowrap;
+        flex-wrap: wrap;
         align-self: center;
         margin: 0;
         padding: 20px;
     }
 
+
+    .aside-article-info {
+        flex-direction: column;
+        margin: 0;
+        padding: 20px;
+        width: 80%;
+
+    }
+
+    .main-article-info {
+        flex-direction: column;
+        margin: 0;
+        padding: 20px;
+        width: 80%;
+        order: -1;
+
+    }
+
+    .galllery-info, .logo-info {
+
+        flex-direction: column;
+        margin: 0;
+        padding: 20px;
+        width: 80%;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+
     .logo {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
+
 
     }
 

@@ -142,31 +142,35 @@ footer li {
 
 
 
-    nav, header {
-        display: flex;
-        flex-direction: column;
-        margin: 0;
-        padding: 0;
-        align-items: center;
 
-    }
+
 
     h1 {
+        font-size: 1.2rem;
+        text-align: center;
+    }
 
-        font-size: 1rem;
+    p {
+        text-align: justify;
+    }
+
+    nav>ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+
     }
 
 
 
-    .info, .gallery, .aside-article-info, .galllery-info, .footer-info {
+    .header-info, .info, .gallery, .aside-article-info, .galllery-info, .footer-info {
         display: flex;
         flex-direction: column;
-        flex-wrap: wrap;
-        justify-content: center;
-        align-items: center;
-
-
-
+        flex-wrap: nowrap;
+        align-self: center;
+        margin: 0;
+        padding: 20px;
     }
 
     .logo {

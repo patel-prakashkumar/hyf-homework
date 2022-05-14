@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="main.css" />
+    <title>Sign up page2 Html/CSS Week3</title>
+  </head>
+  <body>
+    <!-- header part of webpage with logo and nav bar -->
+    <header class="nav">
+      <img
+        src="https://cdn5.vectorstock.com/i/1000x1000/32/69/lets-shopping-logo-design-template-shop-icon-vector-23363269.jpg"
+        alt="logo-image"
+        width="200px"
+        height="200px"
+      />
+      <nav>
+        <ul>
+          <li><a href="">Home</a></li>
+          <li><a href="">News</a></li>
+          <li><a href="">Contact</a></li>
+          <li><a href="">About</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="info">
+      <h1>Sign up to yourcutomtailor.com</h1>
+      <h2>Step 2/4 - how can we reach you?</h2>
+      <div>
+        <label for="file">Progress:</label>
+        <progress id="file" value="30" max="100">30%</progress>
+      </div>
+      <p>
+        We will probably need to stay in touch somehow. Let is know how we can
+        reach you?
+      </p>
+    </main>
+    <form action="results.html" method="get" class="form-info">
+      <div>
+        <label for="email">Email*</label>
+        <input
+          type="email"
+          id="email"
+          pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+          name="email"
+          required
+        />
+        <label for="phone">Phone </label>
+        <input
+          type="tel"
+          id="phone"
+          pattern="[0-9]{10}"
+          name="phone"
+          required
+        />
+      </div>
+      <div>
+        <label for="password">Password* </label>
+        <input
+          type="password"
+          id="password"
+          minlength="10"
+          pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$"
+          title="Please enter at least 1 uppercase character, 1 lowercase character, and 1 number."
+          name="password"
+          required
+        />
+      </div>
+      <div>
+        <label for="re-password">Re-enter Password*</label>
+        <input
+          type="password"
+          id="re-password"
+          minlength="10"
+          pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$"
+          title="Please enter at least 1 uppercase character, 1 lowercase character, and 1 number."
+          name="re-password"
+          required
+        />
+      </div>
+
+      <div>
+        <p>I want to sign up for the newsletter</p>
+      </div>
+      <div>
+        <label for="weekly">Weekly news </label>
+        <input type="radio" checked name="newsletter" id="weekly" />
+        <label for="monthly">Monthly news </label>
+        <input type="radio" name="newsletter" id="monthly" />
+        <label for="donotnews"> Don't send me news </label>
+        <input type="radio" name="newsletter" id="donotnews" />
+      </div>
+
+      <a href="page3.html" target="_self"
+        ><input type="button" value="Next step" class="form-btn"
+      /></a>
+    </form>
+  </body>
+</html>

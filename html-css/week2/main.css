@@ -1,208 +1,161 @@
 * {
     margin: 0;
+    color: #222;
     padding: 0;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+html {
+    border: 2rem solid rgb(208, 220, 219);
+    background-color: #f3e9dd;
+}
+
+body {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: nowrap;
+}
+
+.profile-info, .skills-info {
+    display: grid;
+    grid-template-columns: repeat(2 2fr);
+    padding: 1rem;
+    column-gap: 1rem;
+    margin: 1rem;
+    box-sizing: border-box;
+
 }
 
 
-p {
-    color: rgb(148, 144, 144);
-    font-size: 12px;
-    line-height: 1.15rem;
-}
-
-/* h1 to h3 all heading font traformation*/
-
-h1, h2, h4 {
-    text-transform: uppercase;
-    font-weight: bold;
-    padding: 10px 0;
+.intro {
+    margin: 2rem;
 }
 
 ul {
     list-style: none;
+    text-align: left;
 }
 
-.header-info {
-    padding: 2rem 8rem;
-    background-color: whitesmoke;
+h1 {
+    text-transform: uppercase;
+    text-align: center;
 }
 
-/* navbar */
-nav {
-    padding: 0 8rem;
+.profile {
+    text-align: center;
 }
 
-nav>ul {
-    display: flex;
+.profile p {
+    color: #888;
 }
 
-nav>ul>li {
+img {
+    border-radius: 20rem;
+    width: 15rem;
+    margin: 1rem;
+    padding: 1rem;
+}
 
+h2 {
+    text-align: center;
+    text-transform: uppercase;
+    border-top: 1px solid #888;
+    border-bottom: 1px solid #777;
+    padding: 1rem;
+    margin-bottom: 1.25rem;
+}
 
-    padding-right: 1rem;
-    margin: 1rem 0;
-    color: black
+h3 {
+    text-align: left;
+    color: rgb(150, 90, 90);
+    margin-top: 1.5rem;
+}
+
+.contact li {
+    border-bottom: 1px solid rgb(201, 196, 196);
+    color: #888;
+    text-align: center;
+    padding: 0.25rem;
 }
 
 a {
     text-decoration: none;
-    color: inherit;
+    color: #888;
 }
 
-/* main part of office image*/
-
-section img {
-    width: 100%;
-
-
+.skills li {
+    padding: .5rem 0;
 }
 
-/* used flex for main Containt part */
-
-.info, .gallery {
-    display: flex;
-    width: 100%;
-
-}
-
-.aside-article-info, .galllery-info {
-
-    width: 40%;
-    margin: 0 1rem;
-    padding: 3rem 8rem;
-
-}
-
-.main-article-info, .logo-info {
-    width: 60%;
-    margin: 0 2rem;
-    padding: 3rem;
-}
-
-
-.main-article-info p {
-
-    padding-bottom: 10px;
-}
-
-/* created grid for logo icons */
-
-.logo {
-
-    align-items: center;
+.personal-skills>ul {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-auto-columns: 80px;
-    grid-auto-rows: 80px;
+    grid-template-columns: 1fr 1fr;
     justify-items: center;
-    gap: 10px;
-
+    
 }
 
-.logo-image {
-    width: 60px;
-    height: 60px;
+.professional-skills li {
+    padding: 0.5rem;
 }
 
-/* footer part of website */
-
-.footer-info {
-    display: flex;
-    justify-content: space-around;
-    align-self: center;
-    padding: 3rem;
-    background-color: blueviolet;
-    color: aliceblue;
-
-
+.container {
+    width: 100%;
+    /* Full width */
+    background-color: #ddd;
+    /* Grey background */
 }
 
-.footer-map {
-    box-shadow: thistle;
-    width: 120px;
-    height: 130px;
+.professional-skills p {
+    margin-top: 1rem;
 }
 
-footer p {
-    color: aliceblue;
+.education, .experience {
+    margin: 1rem 0;
 }
 
-footer li {
-
-    border-bottom: 1px solid whitesmoke;
-    padding: 10px 0;
+.skills {
+    text-align: center;
+    padding-top: 0.15rem;
+    padding-bottom: 0.15rem;
+    color: rgb(219, 213, 213);
 }
 
+.html,
+.css {
+    width: 90%;
+    background-color: #04aa6d;
+}
 
-/* Resposive for small device */
+.js,
+.bootstrap {
+    width: 80%;
+    background-color: #2196f3;
+}
 
+.react,
+.git {
+    width: 65%;
+    background-color: #f44336;
+}
 
-@media only screen and (max-width: 768px) {
+.location {
+    font-style: italic;
+    color: #777;
+    padding-bottom: 0.5rem;
+}
 
-
-    h1 {
-        font-size: 1.2rem;
-        text-align: center;
-    }
-
-    p {
-        text-align: justify;
-        padding: 20px;
-    }
-
-    nav>ul {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-
-
-    }
-
-
-
-    .header-info, .info, .gallery, .footer-info {
-        display: flex;
-        flex-direction: column;
-        flex-wrap: wrap;
-        align-self: center;
-        margin: 0;
-        padding: 20px;
-    }
-
-
-    .aside-article-info {
-        flex-direction: column;
-        margin: 0;
-        padding: 20px;
-        width: 80%;
-
-    }
-
-    .main-article-info {
-        flex-direction: column;
-        margin: 0;
-        padding: 20px;
-        width: 80%;
-        order: -1;
-
-    }
-
-    .galllery-info, .logo-info {
-
-        flex-direction: column;
-        margin: 0;
-        padding: 20px;
-        width: 80%;
-        justify-content: flex-start;
-        align-items: flex-start;
-    }
-
-    .logo {
+@media only screen and (max-width: 660px) {
+    body {
+        background-color: #f0dec8;
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
-
-
+        grid-template-columns: 1fr;
+        margin: 0;
     }
+    .personal-skills>ul {
+        display: grid;
+        grid-template-columns: 1fr;
+        justify-items: center;
+        
+    }
+
 
 }

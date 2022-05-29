@@ -71,7 +71,7 @@ const secondWords = [
 const randomNumber1 = Math.floor(Math.random() * 10);
 const randomNumber2 = Math.floor(Math.random() * 10);
 
-const startupName = `${firstWords[randomNumber1]} ${secondWords[randomNumber2]}`;
+const startupName = `${firstWords[randomNumber1]} ${secondWords[randomNumber1]}  ${firstWords[randomNumber2]} ${secondWords[randomNumber2]}` ;
 console.log(
   `New Startup Name is ${startupName} Number of characters are ${startupName.length}`
 );

@@ -107,5 +107,57 @@ function getNumberOfStudents() {
 }
 getNumberOfStudents();
 
-// Task 5 I haven't finished yet. I will upadate soon. 
+// Task 5 Candy helper. 
+const boughtCandyPrices = []
+
+function addCandy(candyType, weight) {
+
+    if (candyType === "Sweet") {
+
+        boughtCandyPrices.push(weight * 0.5);
+
+    }
+
+    else if (candyType === "Chocolate") {
+
+        boughtCandyPrices.push(weight * 0.7);
+
+    }
+    else if (candyType === "Toffe") {
+        boughtCandyPrices.push(weight * 1.1);
+
+    }
+
+    else {
+        boughtCandyPrices.push(weight * 0.03);
+    }
+
+    return boughtCandyPrices;
+
+}
+addCandy("Sweet", 20);
+addCandy("Chocolate", 25);
+addCandy("Toffe", 15);
+addCandy("Chewing-gum", 40);
+console.log(boughtCandyPrices);
+
+// create function canBuyMoreCandy and match total price with math.random()
+const amountToSpend = Math.random() * 100;
+let total = 0;
+function canBuyMoreCandy() {
+
+    for (let i = 0; i < boughtCandyPrices.length; i++) {
+
+        total += boughtCandyPrices[i]
+
+    }
+    if (total <= amountToSpend) {
+        console.log("You can buy more, so please do!")
+    }
+    else {
+        console.log("Enough candy for you!")
+    }
+
+}
+canBuyMoreCandy();
 

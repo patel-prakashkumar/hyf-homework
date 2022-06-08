@@ -5,8 +5,6 @@ function getFullName(firstname, lastname) {
 }
 console.log(getFullName("Benjamin", "Hughes"));
 
-
-
 // fullname with formalname and gender condition check , also checked empty string in firstname and lastname
 
 const fullName1 = getFullName("Prakash", "Patel", "male", true);
@@ -38,15 +36,11 @@ function getFullName(firstname, lastname, gender, useFormalName) {
             return `Lady ${firstname} ${lastname}`;
         }
     }
-
     else {
 
         return `${firstname} ${lastname}`;
     }
-
-
 }
-
 console.log(fullName1);
 console.log(fullName2);
 console.log(fullName3);
@@ -59,8 +53,6 @@ console.log(fullName8);
 
 
 // Task 2 Eventday calculator 
-
-
 
 function getEventWeekday(eventday) {
     const weekDays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
@@ -102,7 +94,7 @@ const class07Students = [];
 function addStudentToClass(studentName) {
     // You write code here
 
-    if (typeof (studentName) !== 'string' || studentName.match(/^\s+$/) !== null) {
+    if (!studentName || typeof (studentName) !== 'string' || studentName.match(/^\s+$/) !== null) {
         console.warn("Please enter correct student name")
     }
     else if (class07Students.length > 6)
@@ -118,7 +110,6 @@ function addStudentToClass(studentName) {
         else {
 
             console.warn("Cannot add more students to class");
-
         }
 
     else {
@@ -129,13 +120,7 @@ function addStudentToClass(studentName) {
         }
     }
 
-
-
-
 }
-
-
-
 addStudentToClass("Prakash");
 addStudentToClass("Prakash");
 addStudentToClass("Michel");
@@ -151,6 +136,7 @@ addStudentToClass("");
 addStudentToClass(" ");
 addStudentToClass("Queen");
 addStudentToClass("Prakash");
+addStudentToClass("Queen");
 
 console.log(class07Students);
 
@@ -162,28 +148,36 @@ function getNumberOfStudents() {
 getNumberOfStudents();
 
 // Task 5 Candy helper. 
+
+
+
 const boughtCandyPrices = []
+let candyPrice = 0;
 
 function addCandy(candyType, weight) {
 
+
     if (candyType === "Sweet") {
 
-        boughtCandyPrices.push(weight * 0.5);
+        candyPrice = weight * 0.5
+        return boughtCandyPrices.push(candyPrice);
 
     }
 
     else if (candyType === "Chocolate") {
-
-        boughtCandyPrices.push(weight * 0.7);
+        candyPrice = weight * 0.7
+        return boughtCandyPrices.push(candyPrice);
 
     }
     else if (candyType === "Toffe") {
-        boughtCandyPrices.push(weight * 1.1);
+        candyPrice = weight * 1.1
+        return boughtCandyPrices.push(candyPrice);
 
     }
 
     else {
-        boughtCandyPrices.push(weight * 0.03);
+        candyPrice = weight * 0.03
+        return boughtCandyPrices.push(candyPrice);
     }
 
 
@@ -199,22 +193,26 @@ console.log(boughtCandyPrices);
 
 
 // create function canBuyMoreCandy and match total price with math.random()
+
 const amountToSpend = Math.random() * 100;
-let total = 0;
+let total = boughtCandyPrices[0];
 function canBuyMoreCandy() {
 
     for (let i = 0; i < boughtCandyPrices.length; i++) {
-
         total += boughtCandyPrices[i]
-
     }
     if (total <= amountToSpend) {
         console.log("You can buy more, so please do!")
+        let extra = amountToSpend - total;
+        console.log(`you have remain amount to spend ${extra.toFixed(2)}`)
+        boughtCandyPrices.push(extra.toFixed(2))
+        console.log(boughtCandyPrices)
+        let sum = total + extra;
+        console.log(`you have added ${extra.toFixed(2)} candies. Now you have total price of candies ${sum.toFixed(2)}`)
     }
     else {
         console.log("Enough candy for you!")
     }
-
 }
-canBuyMoreCandy();
+console.log(canBuyMoreCandy());
 

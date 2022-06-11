@@ -7,34 +7,34 @@ const names = [
     "Rasmus",
     "Samuel",
     "katrine",
-    "Tala",
+    "Tala"
+
 ];
 const nameToRemove = "Ahmad";
-for (var i = names.length - 1; i >= 0; i--) {
+for (let i = 0; i < names.length; i++) {
     if (names[i] === nameToRemove) {
         names.splice(i, 1);
     }
 }
 console.log(names);
 
+
 // Travel time Information function
 const travelInformation = {
     speed: 50,
     destinationDistance: 432,
 }
-function notThisFunctionName(travelInformation) {
+function travelTimeCalculator(travelInformation) {
     const travelTime = travelInformation.destinationDistance / travelInformation.speed;
-    return travelTime;
+    const hour = Math.floor(travelTime);
+    let decpart = travelTime - hour;
+    const min = 1 / 60;
+    decpart = min * Math.round(decpart / min);
+    const minute = Math.floor(decpart * 60) + '';
+    return `${hour} hours and ${minute} minutes`;
 }
-const travelTime = notThisFunctionName(travelInformation);
+const travelTime = travelTimeCalculator(travelInformation);
 console.log(travelTime)
-
-const hour = Math.floor(travelTime);
-let decpart = travelTime - hour;
-const min = 1 / 60;
-decpart = min * Math.round(decpart / min);
-const minute = Math.floor(decpart * 60) + '';
-console.log(`${hour} hours and ${minute} minutes`)
 
 // Time Calculation of  series Duration in Life. 
 const seriesDurations = [
@@ -61,8 +61,8 @@ const seriesDurations = [
 function logOutSeriesText() {
     // write code here
     let totalPerLifeSpan = 0;
+    const age = 80;
     for (let i = 0; i < seriesDurations.length; i++) {
-        const age = 80;
         const serialTime = seriesDurations[i].days + (seriesDurations[i].hours / 24);
         const lifeLongSpan = age * 365;
         const perLifeSpan = serialTime * 100 / lifeLongSpan;
@@ -70,9 +70,11 @@ function logOutSeriesText() {
         totalPerLifeSpan += +perLifeSpan.toFixed(3)
     }
     // Return total percentage of life Span 
-    return console.log(`In total that is ${totalPerLifeSpan} of my life`)
+    return `In total that is ${totalPerLifeSpan}% of my life`
 }
-const perLifeSpan = logOutSeriesText(seriesDurations)
+const perLifeSpan = logOutSeriesText()
+console.log(perLifeSpan)
+
 
 // Save Notes Function
 const notes = [];
@@ -122,9 +124,10 @@ console.log(firstNote);
 
 function logOutNotesFormatted() {
     // your code here
-      for (let i = 0; notes.length; i++) {
+    for (let i = 0; notes.length; i++) {
         console.log(`The note with id: ${notes[i].id}, has the following note text: ${notes[i].content}`)
     }
 }
-logOutNotesFormatted(notes);
+logOutNotesFormatted();
+
 

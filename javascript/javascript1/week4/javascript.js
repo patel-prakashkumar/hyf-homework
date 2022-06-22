@@ -1,37 +1,35 @@
-let userName = [];
+let userName = "";
 const todoList = [];
-
 function getReply(command) {
+    
     if (command === " " || typeof (command) !== 'string') {
         return "Invalid Input";
     }
     if (command.includes("Hello my name is")) {
         let enterName = command.split(" ").pop();
-        if (userName.includes(enterName)) {
-            return `Name aleady exite as ${enterName}`
+        if (!userName.includes(enterName)) {
+            userName = enterName;
+            return `Nice to meet you  ${userName}`;
         }
-        else if (!userName.includes(enterName)) {
-            userName.push(enterName)
-            return `Nice to meet you ${enterName}`;
+        else if (userName.includes(enterName)) {
+            return `Nice to meet you again ${enterName}`
         }
         else {
             return "invalid command"
         }
     }
     if (command.includes("What is my")) {
-        let index = Math.floor(Math.random() * userName.length)
-        return `Your name is ${userName[index]}`
+        return `Your name is ${userName}`
     }
     if (command.includes("Add") && command.includes("to my todo")) {
         let myString = command.replace("to my todo", "");
-        let todo = myString.replace("Add ", "");
+        let todo = myString.replace("Add", "").trim();
         todoList.push(todo);
         return `${todo} added to your todo`
     }
-
     if (command.includes("Remove")) {
         let myString = command.replace("from my todo", "");
-        let removeTodo = myString.replace("Remove ", "");
+        let removeTodo = myString.replace("Remove", "").trim();
         for (var i = 0; i < todoList.length; i++) {
             if (todoList[i] === removeTodo) {
                 todoList.splice(i, 1);
@@ -49,7 +47,7 @@ function getReply(command) {
         return fullDate;
     }
     if (command.includes("Set a timer for")) {
-        let enterMinute = command.substring(15, 18);
+        let enterMinute = command.match(/\d+/g);
         setTimeout(function () {
             console.log("Time Done!");
         }, enterMinute * 60000);
@@ -100,5 +98,6 @@ console.log(getReply("what is 50 + 70"))
 console.log(getReply("what is 4 * 3"))
 console.log(getReply("what is 60 - 3"))
 console.log(getReply("what is 30 / 3"))
-console.log(getReply("Set a timer for .5 minutes"));
+console.log(getReply("Set a timer for 0.5 minutes"));
 console.log(getReply("Set a timer for 1 minutes"));
+

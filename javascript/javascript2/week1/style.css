@@ -1,0 +1,78 @@
+body {
+    font-family: "Open Sans", sans-serif;
+    background-color: #F9FBFD;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body, h1, h2 {
+    margin: 0;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-size: large;
+    padding-bottom: 30px;
+    text-align: center;
+}
+
+#shortest-word {
+    height: 50vh;
+    width: 100%;
+    background-color: rgb(185, 200, 200);
+    padding: 30px;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+}
+
+#danish-letters {
+    height: 50vh;
+    width: 100%;
+    background-color: rgb(185, 200, 200);
+    padding: 30px;
+    border: 1px solid black;
+}
+
+#cointainer {
+    height: 50vh;
+    width: 100%;
+    background-color: rgb(185, 200, 200);
+    padding: 30px;
+    border: 1px solid black;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    background-color: rgb(185, 200, 200);
+    padding: 30px;
+    border: 1px solid black;
+}
+
+.div-style {
+    display: flex;
+    flex-direction: row;
+}
+
+@media only screen and (max-width: 600px) {
+    body {
+        background-color: lightblue;
+        font-family: "Open Sans", sans-serif;
+        display: flex;
+        flex-direction: column;
+    }
+
+    #shortest-word, #danish-letters, #cointainer, .div-style {
+        flex-direction: column;
+        width: 100%;
+    }
+}

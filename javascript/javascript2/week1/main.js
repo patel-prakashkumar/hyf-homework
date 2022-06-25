@@ -16,15 +16,15 @@ displayOutput.innerHTML = `Shortest word from List is : ${shortestOutput}`;
 shortestWord.appendChild(displayOutput);
 // Danish letters
 const danishString = "Jeg har en blå bil";
-const danishString2 = "Blå grød med røde bær";
+const danishString2 = "BlÅ grød med røde bær";
 const danishLetter = document.getElementById('danish-letters');
 const danishLetters = document.createElement('h4');
 danishLetters.innerHTML = `Danish letters 1 : "${danishString}"` + `Danish letters 2 : "${danishString2} "`;
 danishLetter.appendChild(danishLetters);
 function findDanishString(danishChar) {
-    let charÅ = (danishChar.match(/å/i) || []).length;
-    let charÆ = (danishChar.match(/æ/i) || []).length;
-    let charØ = (danishChar.match(/ø/i) || []).length;
+    let charÅ = (danishChar.toLowerCase().match(/å/g) || []).length;
+    let charÆ = (danishChar.toLowerCase().match(/æ/g) || []).length;
+    let charØ = (danishChar.toLowerCase().match(/ø/g) || []).length;
     let total = charÅ + charÆ + charØ;
     const displyChar = {
         Total: total,
@@ -32,7 +32,11 @@ function findDanishString(danishChar) {
         ø: charØ,
         å: charÅ
     }
-    return displyChar;
+    for (var key in displyChar) {
+        if (displyChar[key] === 0) delete displyChar[key];
+      }
+
+      return displyChar
 }
 console.log(findDanishString(danishString))
 console.log(findDanishString(danishString2))

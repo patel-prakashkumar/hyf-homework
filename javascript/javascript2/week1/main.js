@@ -34,9 +34,9 @@ function findDanishString(danishChar) {
     }
     for (var key in displyChar) {
         if (displyChar[key] === 0) delete displyChar[key];
-      }
+    }
 
-      return displyChar
+    return displyChar
 }
 console.log(findDanishString(danishString))
 console.log(findDanishString(danishString2))
@@ -57,12 +57,20 @@ btnName.innerText = "Click Me!"
 btnName.style.backgroundColor = 'lightblue'
 btnName.style.padding = '10px'
 btnName.style.margin = '10px'
+console.log(btnName)
 document.getElementById('cointainer').appendChild(labelName);
 document.getElementById('cointainer').appendChild(inputName).placeholder = 'Input Your Name';
 document.getElementById('cointainer').appendChild(btnName);
 document.getElementById('cointainer').appendChild(displayName);
 const spiritAnimal = ['The Lion Attitude', 'Loyalty and bravery of Dog', 'The self control ant', 'The wisdom Fox', 'Isolated Got', 'Intelligence Giraffe', 'The Courageous Goldfinch', 'Transfromation of frog', 'Balance of Panda', 'Power of Tiger']
-btnName.addEventListener('click', function () {
+
+// Spitit Animal advance option
+const radioMouse = document.getElementById('mouse');
+const radioInput = document.getElementById('key');
+const radioButton = document.getElementById('button-click');
+
+function eventB() {
+
     const randomName = Math.floor(Math.random() * spiritAnimal.length);
     const text = inputName.value;
     if (!text) {
@@ -71,8 +79,39 @@ btnName.addEventListener('click', function () {
     else {
         displayName.innerHTML = text + ' : ' + spiritAnimal[randomName];
     }
-})
-// Spitit Animal advance option
+}
+
+const radios = document.querySelectorAll('input')
+for (const radio of radios) {
+    radio.onclick = (e) => {
+        if (e.target.value === 'mouse-hover') {
+            inputName.value = '';
+            displayName.innerHTML = 'you have select mouse'
+            inputName.addEventListener('mouseover', eventB)
+            inputName.removeEventListener('keypress', eventB)
+            btnName.removeEventListener('click', eventB)
+        }
+        else if (e.target.value === 'key-type') {
+            inputName.value = '';
+            displayName.innerHTML = 'you have select key type'
+            inputName.addEventListener('keypress', eventB)
+            inputName.removeEventListener('mouseover', eventB)
+            btnName.removeEventListener('click', eventB)
+        }
+        else if (e.target.value === 'button-clicks') {
+            inputName.value = '';
+            displayName.innerHTML = 'you have select button event'
+            btnName.addEventListener('click', eventB)
+            inputName.removeEventListener('keypress', eventB)
+            inputName.removeEventListener('mouseover', eventB)
+        } else {
+
+            displayName.innerHTML = 'please select radio button'
+        }
+    }
+}
+
+
 // product list
 console.log("Script loaded");
 const products = getAvailableProducts();

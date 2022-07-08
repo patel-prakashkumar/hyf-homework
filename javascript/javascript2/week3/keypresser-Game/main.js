@@ -1,3 +1,11 @@
+const jsConfetti = new JSConfetti()
+async function confettiDemo(){
+    await jsConfetti.addConfetti()
+    setTimeout(
+    function pageRelode(){
+    window.location.reload();
+    },2000)
+}
 const inputTime = document.getElementById('input-key');
 const btnStart = document.getElementById('btn-start');
 const btnStop = document.getElementById('btn-stop');
@@ -26,8 +34,8 @@ function keyPress(e) {
     }
 }
 function display() {
-    document.removeEventListener('keypress', keyPress)
-    if (counterL > counterS) {
+  document.removeEventListener('keypress', keyPress)
+ if (counterL > counterS) {
         return SkeyResult()
     }
     else {
@@ -40,6 +48,7 @@ function SkeyResult() {
     resultBox.style.backgroundColor = '#F06D06'
     sKey.style.backgroundColor = 'Red'
     document.body.style.backgroundColor = "#76BA99";
+    
 }
 function LkeyResult() {
     winnerResult.innerHTML = `<b>Winner of the Game :==> S key Player Total Number of key Pressed ${counterS} within ${enterTime} Second</b>`
@@ -47,17 +56,10 @@ function LkeyResult() {
     lKey.style.backgroundColor = 'Red'
     resultBox.style.backgroundColor = '#F06D06'
     document.body.style.backgroundColor = "#76BA99";
+    
 }
 function btnStartAgain() {
-    inputTime.value = '';
-    lkeyOutput.innerHTML = '';
-    skeyOutput.innerHTML = '';
-    winnerResult.innerHTML = '';
-    countdown.innerHTML = '';
-    lKey.style.backgroundColor = '#C4DFAA';
-    resultBox.style.backgroundColor = '#C4DFAA';
-    sKey.style.backgroundColor = '#C4DFAA';
-    document.body.style.backgroundColor = "#C4DFAA";
+    window.location.reload();
 }
 function setTimer() {
     const enterTime = inputTime.value;
@@ -65,6 +67,7 @@ function setTimer() {
     let count = enterTime;
     let counter = setInterval(timer, 1000);
     let x = setTimeout(display, time)
+    let y = setTimeout(confettiDemo, time)
     document.addEventListener('keypress', keyPress)
     btnStop.addEventListener('click', stopGame)
 
@@ -75,18 +78,19 @@ function setTimer() {
             countdown.innerHTML = 'Game Over'
             return;
         }
-        countdown.innerHTML = "Countdown to End of Game :" + count; // watch for spelling
+        countdown.innerHTML = "Countdown to End of Game :" + count; 
     }
     function stopGame() {
-        clearTimeout(x)
+        clearTimeout(y);
+        clearTimeout(x);
+        clearInterval(counter);
+        countdown.innerHTML = "Countdown to End of Game : Game Stop By User";
         inputTime.value = '';
         lkeyOutput.innerHTML = '';
         skeyOutput.innerHTML = '';
         winnerResult.innerHTML = '<h3>Game Stop By User</h3>'
+       
     }
 }
 btnStart.addEventListener('click', setTimer)
 btnAgain.addEventListener('click', btnStartAgain)
-
-
-

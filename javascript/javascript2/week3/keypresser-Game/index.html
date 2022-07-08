@@ -8,35 +8,39 @@
     <title>Document</title>
   </head>
   <body>
-    <div class="key-press">
+    
+   <div class="key-press">
       <h1>The fastest presser in this realm</h1>
       <h2 class="key-press">Fastest Presser</h2>
       <input type="number" id="input-key" placeholder="Set Seconds" />
       <br />
-      <button id="btn-start">Start Game</button>
-      <button id="btn-stop">Game Stop</button>
-      <button id="btn-again">Start Again</button>
+      <button id="btn-start">Start</button>
+      <button id="btn-stop">Stop</button>
+      <button id="btn-again">Restart</button>
       <hr />
-      <p id="countdown">  </p>
-      <hr>
+      <p id="countdown"></p>
+      <hr />
       <div class="box">
         <div id="box-1">
-          <h2>Press S</h2><br>
+          <h2>Press S</h2>
+          <br />
           <p id="skey"></p>
         </div>
         <div id="box-2">
-          <h2>Press L</h2><br>
+          <h2>Press L</h2>
+          <br />
           <p id="lkey"></p>
         </div>
         <br />
         <div id="box-3">
-          <h1>Result</h1><br>
+          <h1>Result</h1>
+          <br />
           <p id="winner"></p>
         </div>
       </div>
       <p class="key-press"></p>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/confetti-js@0.0.13/dist/index.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-confetti@latest/dist/js-confetti.browser.js"></script>
     <script src="main.js"></script>
   </body>
 </html>

@@ -60,20 +60,24 @@ runAfterDelay(4, function () {
 
 // task 8: Check if we have double clicked on the page. A double click is defined by two clicks within 0.5 seconds. If a double click has been detected, log out the text: "double click!"
 
-const btnClick = document.createElement('button')
-btnClick.innerHTML = 'Task 8: Single Click Or Double Click';
-myDiv.appendChild(btnClick);
+let clickone = false;
 let pendingClick;
 window.addEventListener('click', function myclick() {
-         clearTimeout(pendingClick);
-         pendingClick = setTimeout(() => {
-        displayOutput.innerHTML = 'Task 8 : click';
-    }, 1000);
+    if (!clickone) {
+        clickone = true;
+        pendingClick = setTimeout(() => {
+            clickone = false;
+            console.log('single clicked')
+        }, 500)
+    }
+    else {
+        clickone = false;
+        clearTimeout(pendingClick)
+        console.log('double clicked')
+
+    }
 })
-window.addEventListener('dblclick', function mydblclick() {
-    clearTimeout(pendingClick);
-    displayOutput.innerHTML = 'Task 8 : double click';
-})
+
 // task 9: Create a function called jokeCreator that has three parameters: shouldTellFunnyJoke - boolean, logFunnyJoke - function and logBadJoke - function. If you set shouldTellFunnyJoke to true it should call the logFunnyJoke function that should log out a funny joke. And vice versa.
 let shouldTellFunnyJoke = false;
 function logFunnyJoke() {
@@ -95,16 +99,16 @@ function jokeCreator(x, y, z) {
 jokeCreator(shouldTellFunnyJoke, logFunnyJoke, logBadJoke) 
 
 // Create an array with 3 items. All items should be functions. Iterate through the array and call all the functions.
-function a(){
+function item1(){
     console.log('Execersise2 task 1 : function A: Its First item in array')
   }
-  function b(){
+  function item2(){
     console.log('Execersise2 task 1  : function B: Its Second items in array')
   }
-  function c(){
+  function item3(){
     console.log('Execersise2 task 1 : function C: Its Third item in array')
   }
-  const arrayValue = [a(), b(), c()];
+  const arrayValue = [item1(), item2(), item3()];
   arrayValue.forEach((list) => {
       return list
   });

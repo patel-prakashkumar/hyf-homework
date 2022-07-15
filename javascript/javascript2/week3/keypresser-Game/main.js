@@ -20,14 +20,17 @@ const lkeyOutput = document.getElementById("lkey")
 let counterS = 0;
 let counterL = 0;
 let countDown = 0;
+let enterTime = 0;
 function keyPress(e) {
     if (e.key === 's') {
         enterTime = inputTime.value;
-        skeyOutput.innerHTML = `Number of Key Pressed ${counterS++}`
+        counterS++
+        skeyOutput.innerHTML = `Number of Key Pressed ${counterS}`
     }
     else if (e.key === 'l') {
         enterTime = inputTime.value;
-        lkeyOutput.innerHTML = `Number of Key Pressed ${counterL++}`
+        counterL++
+        lkeyOutput.innerHTML = `Number of Key Pressed ${counterL}`
     }
     else {
         winnerResult.innerHTML = '<h3>Press wrong Key</h3>'

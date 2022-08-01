@@ -59,7 +59,7 @@ setTimeoutPromise(3000).then(() => {
 
 function getCurrentLocation() {
     return new Promise((resolve, reject) => {
-        if (!navigator.geolocation.getCurrentPosition) {
+        if (navigator.geolocation.getCurrentPosition) {
             resolve('There is location.');
         } else {
             reject(`can't find location`);
@@ -67,15 +67,15 @@ function getCurrentLocation() {
     });
 }
 getCurrentLocation()
-    .then((position) => {
-        // called when the users position is found
-        let x = position.coords.latitude;
-        let y = position.coords.longitude;
-        console.log(x, y);
+    .then((res) => {
+        navigator.geolocation.getCurrentPosition(position => {
+            let x = position.coords.latitude;
+            let y = position.coords.longitude;
+            console.log(`${res} Latititude : ${x}, Longitude : ${y}`);
+        })
     })
     .catch((error) => {
-        // called if there was an error getting the users location
-        console.log('There is error ' + error);
+        console.log('There is error  ' + error);
     });
 
 // task 4 Fetching and waiting

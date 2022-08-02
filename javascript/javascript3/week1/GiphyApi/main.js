@@ -1,21 +1,17 @@
 const apiKey = 'TnGhS9Vu9jrTmAOpBbNXscaRtP8opJNw'
 const giphyName = document.getElementById('giphy-name');
-const btnsearch = document.getElementById('btn-giphy');
+const btnSearch = document.getElementById('btn-giphy');
 const giphyNum = document.getElementById('giphy-num');
 const displyGiphy = document.getElementById('giphy-result')
 let giphyNameSearch = giphyName.value;
 let disGiphy = giphyNum.value
 giphyNameSearch = "hello";
 disGiphy = 25
-if (giphyNameSearch === "hello") {
-    display()
-}
 function display() {
     fetch(`https://api.giphy.com/v1/gifs/search?api_key=TnGhS9Vu9jrTmAOpBbNXscaRtP8opJNw&q=${giphyNameSearch}&limit=${disGiphy}&offset=0&rating=g&lang=en`)
         .then(response => response.json())
         .then(giphyData => {
             const data = giphyData.data
-
             data.forEach(element => {
                 const urlGiphy = element.images.original.url;
                 const imgGiphy = document.createElement('img');
@@ -25,7 +21,8 @@ function display() {
             });
         })
 }
-btnsearch.addEventListener('click', () => {
+display();
+btnSearch.addEventListener('click', () => {
     giphyNameSearch = giphyName.value;
     if (!giphyNameSearch) {
         displyGiphy.innerHTML = 'Enter Giphy Name'

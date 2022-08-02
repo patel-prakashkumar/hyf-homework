@@ -55,7 +55,7 @@ setTimeoutPromise(3000).then(() => {
     console.log("Called after 3 seconds");
 });
 
-// task3 Rewrite navigator.geolocation.getCurrentPosition to promises.
+// task3 Rewrite navigator.geolocation.getCurrentPosition to promises..
 
 function getCurrentLocation() {
     return new Promise((resolve, reject) => {

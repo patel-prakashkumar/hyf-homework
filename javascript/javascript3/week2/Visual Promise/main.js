@@ -20,16 +20,16 @@ async function translateOneByOne() {
     );
     await moveElement(blueBox, blueCircleTarget).then(
         () => {
-            console.log('Blue element has been moved');
+            console.log('Blue Box element has been moved');
         }
     );
     await moveElement(greenBox, greenCircleTarget).then(() => {
-        console.log('Green element has been moved');
+        console.log('Green Box element has been moved');
     });
 
     await Promise.all([moveElement(redBox, backToPosition), moveElement(blueBox, backToPosition), moveElement(greenBox, backToPosition)])
         .then(() => {
-            console.log('all eleemnt has been moved');
+            console.log('All boxes eleemnt has been moved back to Position');
         });
 
     await translateAllAtOnce()

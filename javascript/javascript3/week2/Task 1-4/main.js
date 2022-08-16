@@ -1,7 +1,6 @@
 // task 1 Movies exercise
-fetch(
-    "https://gist.githubusercontent.com/pankaj28843/08f397fcea7c760a99206bcb0ae8d0a4/raw/02d8bc9ec9a73e463b13c44df77a87255def5ab9/movies.json"
-)
+const fetchUrl = "https://gist.githubusercontent.com/pankaj28843/08f397fcea7c760a99206bcb0ae8d0a4/raw/02d8bc9ec9a73e463b13c44df77a87255def5ab9/movies.json";
+fetch(fetchUrl)
     .then((res) => res.json())
     .then((moviesData) => {
         const moviesList = moviesData;
@@ -10,7 +9,10 @@ fetch(
         console.log(badMovies);
         const badMoviesSince2000 = badMovies.filter((list) => list.year > 2000);
         console.log(badMoviesSince2000);
-    });
+    })
+    .catch((error) => {
+        console.error('Error:', error);
+      });
 
 //task 2 Promise that resolves after set time by decalring variable as const
 const delaySecond = new Promise((resolve) => {
@@ -82,11 +84,15 @@ getCurrentLocation()
 // using promises and .then.
 function astronautData() {
     setTimeout(() => {
-        fetch('http://api.open-notify.org/astros.json')
+        const fetchUrl = 'http://api.open-notify.org/astros.json'
+        fetch(fetchUrl)
             .then((res) => res.json())
             .then((data) => {
                 console.log(data);
-            });
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+              });
     }, 3000);
 }
 astronautData();
@@ -98,7 +104,8 @@ async function astronautDataAsync() {
             resolve();
         }, 3000)
     );
-    const aestronautDataApi = await fetch('http://api.open-notify.org/astros.json');
+    const fetchUrl = 'http://api.open-notify.org/astros.json'
+    const aestronautDataApi = await fetch(fetchUrl);
     const aestronaut = await aestronautDataApi.json();
     console.log(aestronaut);
 }

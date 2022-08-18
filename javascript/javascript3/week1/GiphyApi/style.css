@@ -24,7 +24,8 @@ h1 {
 main {
     display: flex;
     flex-direction: column;
-    background-color: rgb(85, 123, 167);
+    background-color: rgb(65, 72, 80);
+    opacity: 0.9;
     margin: 0 35% 0 35%;
 }
 
@@ -37,18 +38,18 @@ main {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-.giphy-result {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
+.giphy > div{
+ display: flex;
+ flex-wrap: wrap;
+ align-items: center;
+ justify-content: center;
+   
 }
 
 .img-giphy {
-    display: flex;
-    margin: 5px 0 5px 0;
-    width: 250px;
-    height: 250px;
+    margin: 5px 5px 5px 5px;
+    width: 200px;
+    height: 200px;
 }
 
 @media only screen and (max-width: 600px) {
@@ -58,7 +59,17 @@ main {
     }
 
     main {
+        display: flex;
+        flex-direction: column;
         margin: 0;
         width: 100%;
     }
+    
+.giphy > div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+      
+   }
 }

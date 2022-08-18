@@ -15,8 +15,8 @@ function display() {
             data.forEach(element => {
                 const urlGiphy = element.images.original.url;
                 const imgGiphy = document.createElement('img');
-                imgGiphy.classList.add("img-giphy");
                 imgGiphy.setAttribute("src", urlGiphy);
+                imgGiphy.classList.add("img-giphy");
                 displyGiphy.appendChild(imgGiphy);
             });
         })
@@ -44,6 +44,7 @@ btnSearch.addEventListener('click', () => {
             giphyNum.value = '';
         }
     })
+
 
 })
 

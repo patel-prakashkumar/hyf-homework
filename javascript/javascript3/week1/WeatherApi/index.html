@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Weather app</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header></header>
+    <main>
+      <div class="dis-part1">
+        <div class="city-detail"></div>
+        <div class="temp">temparature</div>
+        <div class="weather-Icon"></div>
+        <div id="sun-time"></div>
+      </div>
+      <div class="dis-part2">
+        <section class="sec1">
+          <div>
+            <input
+              type="search"
+              name="city"
+              placeholder="Search for a City"
+              id="input-city"
+              value=""
+            />
+            <button type="submit" id="btn-submit">Submit</button>
+          </div>
+          <div>
+            <button type="submit" id="btn-location">
+              Current Location Temparature
+            </button>
+          </div>
+        </section>
+        <section id ="display-map">
+         
+        </section>
+        <hr />
+        <section class="weather-decs">
+          <h2>weather detail</h2>
+          <ul id="weather-dec"></ul>
+        </section>
+        <hr />
+      </div>
+    </main>
+    <footer>WeatherApp JavaScript-3 week-1 Assignment</footer>
+    <script src="main.js"></script>
+  </body>
+</html>

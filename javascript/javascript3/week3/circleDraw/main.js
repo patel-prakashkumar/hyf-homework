@@ -21,6 +21,7 @@ let circlesPos = {
 
 function circleFillSameColor() {
     const canvas = document.getElementById("myCanvas");
+    // @ts-ignore
     let context = canvas.getContext("2d");
     function createCircle(circleFillSameColor) {
         circleFillSameColor.draw(context);
@@ -37,6 +38,7 @@ function circleFillSameColor() {
         createCircle(circles[i]);
     }
     const btnCircleFillSameColor = document.getElementById("circle-samecolorfill");
+    // @ts-ignore
     btnCircleFillSameColor.addEventListener('click', () => {
         window.location.reload();
     });
@@ -46,6 +48,7 @@ circleFillSameColor();
 
 function circleFillDiffColor() {
     const canvas2 = document.getElementById("myCanvas2");
+    // @ts-ignore
     let context = canvas2.getContext("2d");
     function createCircle(circleFillSameColor) {
         circleFillSameColor.draw(context);
@@ -66,6 +69,7 @@ circleFillDiffColor();
 
 function circleCreate100ms() {
     const canvas3 = document.getElementById("myCanvas3");
+    // @ts-ignore
     let context = canvas3.getContext("2d");
     function createCircle() {
         const xRandom = Math.random() * 150 + circlesPos.left;
@@ -82,6 +86,7 @@ circleCreate100ms();
 
 function circleMouseMove() {
     const canvas4 = document.getElementById("myCanvas4");
+    // @ts-ignore
     let context = canvas4.getContext("2d");
     function createCircle() {
         const xRandom = Math.random() * 150 + circlesPos.left;
@@ -92,6 +97,7 @@ function circleMouseMove() {
         c1.draw(context)
 
     }
+ // @ts-ignore
  canvas4.addEventListener('mousemove', createCircle)
 }
 circleMouseMove();

@@ -30,13 +30,16 @@ class ShoppingCart {
   searchProduct() {
     const input = document.getElementById('product-search')
     const productSearch = document.getElementById('product-list');
+    // @ts-ignore
     input.addEventListener('keyup', () => {
+      // @ts-ignore
       const inputProduct = input.value
       if (input) {
         const productFind = this.products.filter(element => element.name.match(input));
         for (let i = 0; i < productFind.length; i++) {
           const productP = document.createElement('p')
           productP.innerHTML = `Product Name:  ${productFind[i].name} Product Price: ${productFind[i].price}`;
+          // @ts-ignore
           productSearch.appendChild(productP)
         }
       } else {
@@ -47,16 +50,20 @@ class ShoppingCart {
   getTotal() {
     const productPrice = this.products.map(element => element.price);
     const productSum = productPrice.reduce((productPrice, a) => productPrice + a, 0)
+   
     const productTotal = document.getElementById('product-total');
     const productTotalP = document.createElement('p')
     productTotalP.innerHTML = `Product Total Price:  ${productSum}`;
-    productTotal.appendChild(productTotalP)
+    // @ts-ignore
+    productTotal.appendChild(productTotalP) 
+    return productSum;
   }
   renderProducts() {
     const divRender = document.getElementById('product-render');
     const productUl = document.createElement('ul');
     productUl.classList.add('product-ul');
     productUl.innerHTML = "Product Detail";
+    // @ts-ignore
     divRender.appendChild(productUl);
     const products = this.products.map(element => element);
     for (let i = 0; i < products.length; i++) {
@@ -86,7 +93,6 @@ class ShoppingCart {
         const totalPrice = document.createElement("h2");
         document.body.appendChild(totalPrice);
         totalPrice.innerHTML = `Total price =  ${this.getTotal()}`;
-
       })
       .catch((error) => {
         console.error('Error:', error);

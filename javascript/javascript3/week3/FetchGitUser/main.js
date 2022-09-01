@@ -13,6 +13,7 @@ Promise.all(urlsUsers.map(url => fetch(url).then(res => res.json())
         let userLI = document.createElement("li");
         userLI.classList.add("mystyleLI");
         userLI.innerHTML = "Full Name: " + userName[i];
+        // @ts-ignore
         myUl.appendChild(userLI);
 
         let userUl = document.createElement('ul');
@@ -29,5 +30,6 @@ Promise.all(urlsUsers.map(url => fetch(url).then(res => res.json())
         userUl.appendChild(userOwnerRepoLi);
     }
 }).catch((error) => {
+    // @ts-ignore
     myUl.innerHTML = error;
 });

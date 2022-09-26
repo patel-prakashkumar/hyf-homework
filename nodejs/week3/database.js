@@ -6,7 +6,7 @@ const knex = require("knex")({
       user: process.env.DB_USER || "root",
       password: process.env.DB_PASSWORD || "1234",
       database: process.env.DB_NAME || "hyf_node_week3_warmup",
-      multipleStatements: true,
+      multipleStatements: false,
     },
   })
  module.exports = knex;

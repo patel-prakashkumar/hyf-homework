@@ -8,33 +8,12 @@ app.use(express.json())
 app.get('/', (req, res) => {
     res.send('This is a search engine')
 })
-/* 
-app.get('/search', (req, res) => {
- const searchWord = req.query.q
- const listItem = [];
-  data.forEach(element => {
-    let itemFound = false;
-        Object.keys(element).forEach(elementKey => {
-            if(new String(element[elementKey]).includes(searchWord) && !itemFound){
-               listItem.push(element)
-               itemFound = true;
-            }
-        
-        });
-    });
-    if(listItem.length === 0){
-    res.status(404).json("Search Word is not availbel in Data")
-    }
-    else{
-        res.json(listItem)
-    }
-}) */
-
 app.get('/search', (req, res) => {
     const searchWord = req.query.q
+    // @ts-ignore
     const listItem = data.filter(e => Object.values(e).some(value => String(value).includes(searchWord)))
     if (listItem.length === 0) {
-        res.status(404).json("Search Word is not availbel in Data")
+        res.json(data)
     }
     else {
         res.json(listItem)
@@ -57,9 +36,13 @@ app.post('/search', (req, res) => {
             return item[key] === listItem[key];
         });
     });
-    console.log(listFoundItem)
-    res.json(listFoundItem);
-
+    const searchWord = req.query.q
+    if(searchWord && listItem){
+     res.status(404).json("Query parameter and body request can't be request sametime")
+    }
+    else{
+        res.json(listFoundItem);
+    }
 });
 
 app.listen(port, () => {

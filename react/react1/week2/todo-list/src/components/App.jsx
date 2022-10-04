@@ -11,23 +11,32 @@ function App() {
         };
     }, []);
 
-// render todo list from Array
-    const list = todos.map(list => <ul><li key={list.id}>{list.description}</li></ul>)
+     // delete todo list from array
 
-// use line through on list
+     let [deleteList, setList] = useState(todos)
+     let deleteTodo = (e) => {
+         let x = e.target.getAttribute("deleteTodoList");
+         setList(deleteList.filter(list => list.description !== x))
+}
 
+    // render todo list from Array
+    const list = todos.map(list =>{return (
+        <div>{list.description}
+            <input type="checkbox"></input>
+            <button deleteTodoList={list.description} onClick={deleteTodo}>Delete</button></div>
+                
+    )})
+
+   
+
+    // use line through on list
     const isDone = false;
     const lineThrough = { textDecoration: "line-through" };
-
-
-    
-
-
     return <div>
         <h1>
             You have used {count} seconds on this website.
         </h1>
-        {list}
+    {list}
     </div>
 }
 

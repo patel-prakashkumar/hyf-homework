@@ -10,6 +10,10 @@ header h1 {
   background-color: #c76a14;
   text-align: center;
 }
+.heading{
+  color:red;
+  font-family: cursive;
+}
 
 h1 {
   font-size: 1 rem;

@@ -1,13 +1,13 @@
 import React from 'react';
 
-import TodoList from './TodoList';
+import Main from './Main';
 import Header from './Header';
 import Footer from './Footer';
-import todoList from '../Todo';
+import todoList from '../todoList';
 
 function createTodo(todoList) {
     return (
-      <TodoList
+      <Main
         key={todoList.id}
         description={todoList.description}
         date={todoList.date}

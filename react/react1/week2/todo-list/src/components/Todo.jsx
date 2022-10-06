@@ -17,16 +17,20 @@ function App() {
             id: todoList.length + 1,
             description: "Random Text " + (todoList.length + 1)
         }]
-
         return setTodList(addTodoList)
     }
- // Delete todo list from array
+    // No Item in todo List 
+    const [todoText, setText] = useState("");
+
+    // Delete todo list from array
     function handleDeleteTodo(id) {
         const deleteTodoList = todoList.filter((todo) => todo.id !== id);
-        console.log(deleteTodoList)
+        if (deleteTodoList.length === 0) {
+            setText("NO Item in Todo List")
+        }
         return setTodList(deleteTodoList)
     }
-    
+
     // use line through on checkbox list
 
     return <div>
@@ -34,7 +38,7 @@ function App() {
             You have used {secondCount} seconds on this website.
         </h1>
         <h1 className="heading">Todo List</h1>
-        <button onClick={handleAddTodo}>Add Todo</button>
+        <button onClick={handleAddTodo}>Add Todo {todoText} </button>
         <div className="todo-list">{todoList.map(list => {
             return (
                 <li key={list.id}>

@@ -1,3 +1,49 @@
 body{
-    background-color: blanchedalmond;
+    background-color: rgb(146, 111, 60);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
+header{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    font-size: 2rem;
+    padding: 20px;
+    background-color: beige;
+    text-align: center;
+}
+.heading{
+    font-family: cursive;
+    font-weight: bold;
+    font-size: 2rem;
+    text-align: center;
+}
+button{
+    color: red;
+    font-family: monospace;
+    font-size: large;
+    font-weight: 700;
+}
+
+.todo-list{
+    display: flex;
+    flex-direction: column;
+    font-family: sans-serif;
+    font-weight: normal;
+    font-size: 1.5rem;
+    padding: 10px;
+    color: rgb(46, 24, 24);
+}
+
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color: white;
+    text-align: center;
+    font-size: medium;
+    color: darkgray;
+    text-align: center;
+  }

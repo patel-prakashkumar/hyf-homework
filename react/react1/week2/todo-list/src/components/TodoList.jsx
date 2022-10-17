@@ -46,13 +46,11 @@ function TodoList() {
             
             return (
                 <li key={list.id}>
-                     {list.description}
-                    <input type="checkbox"></input>
+                    <input type="checkbox" />
+                    <span>{list.description}</span>
                     <button onClick={() => handleDeleteTodo(list.id)}>Delete</button>
-    
-                </li>
-
-            )
+                    </li>
+                    )
         })}</div>
     </div>
 }

@@ -25,6 +25,13 @@ button{
     font-size: large;
     font-weight: 700;
 }
+li{
+    list-style: none;
+}
+input[type=checkbox]:checked + span {
+    color:rgb(16, 14, 14);
+    text-decoration: line-through;
+} 
 
 .todo-list{
     display: flex;

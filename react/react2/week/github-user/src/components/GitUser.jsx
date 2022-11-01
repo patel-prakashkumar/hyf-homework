@@ -1,4 +1,4 @@
-import { UserContext } from "./GitUserContext";
+import UserContext from "./Context";
 import React, { useContext } from "react";
 
 export default function UserDetails() {
@@ -17,10 +17,10 @@ export default function UserDetails() {
             { usersResult.length === 0 && !error ? 
                 <h4>No results.</h4> : 
                 <ul>
-                    {usersResult.map((item => {
+                    {usersResult.map((user => {
                         return(
-                            <li key={item.id}>
-                                {item.login}
+                            <li key={user.id}>
+                                {user.login}
                             </li>
                         )
                     }))}

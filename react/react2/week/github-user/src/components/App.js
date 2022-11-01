@@ -1,15 +1,15 @@
 import React from 'react';
 import Header from './Header';
 import Footer from './Footer';
-import GitUserContext from './GitUserContext';
+import GitUserFetch from './GitUserFetch';
 import GitUser from './GitUser';
 
 function App() {
     return <>
         <Header />
-        <GitUserContext>
+        <GitUserFetch>
             <GitUser />
-        </GitUserContext>
+        </GitUserFetch>
         <Footer />
     </>
 }

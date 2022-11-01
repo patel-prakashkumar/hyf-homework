@@ -1,7 +1,5 @@
 import React, { useState } from "react";
-import { createContext } from "react";
-
-export const UserContext = createContext();
+import UserContext from "./Context";
 
 export default function GitUserContext({ children }) {
     const [user, setUser] = useState("");

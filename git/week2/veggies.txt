@@ -1,5 +1,7 @@
 Cucumber
 Pumpkin
-Tomato
+String beans
 Peppers
 Eggplant
+Green peas
+Corn

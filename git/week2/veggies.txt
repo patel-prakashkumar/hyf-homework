@@ -1,5 +1,10 @@
 Cucumber
 Pumpkin
+String beans
+Peppers
+Eggplant
+Green peas
+Corn
 Carrot
 Peppers
 Eggplant
